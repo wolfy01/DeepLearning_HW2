@@ -1,0 +1,2 @@
+Model Name, time
+ model_batchsize_16_hiddensize_256_DP_0.3_worddim_2048, 4855.529591798782
