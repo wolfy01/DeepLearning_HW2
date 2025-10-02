@@ -23,5 +23,5 @@ For testing, the bash script "hw2_seq2seq.sh" has to be run.
 However, before that make sure that, Train = False is set in the main_execution() function in the model_seq2seq.py file.
 The "hw2_seq2seq.sh" script is run with "testing_data" and testset_output.txt.
 
-The trained model "model_batchsize_64_hiddensize_256_DP_0.3_worddim_2048.h5" has a bleu score of 0.6664588094412136. 
+The trained model "model_batchsize_16_hiddensize_256_DP_0.3_worddim_2048.h5" has a bleu score of 0.6664588094412136. 
 This information is also recorded in the final_result.csv file during the testing process.
