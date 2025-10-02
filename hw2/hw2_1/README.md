@@ -1,27 +1,61 @@
-**Contents of the repositry:**
+# 🎥 Video Captioning with S2VT + Attention  
 
-The main code is in the "model_seq2seq.py" file. 
+This project implements a **Sequence-to-Sequence (S2VT) model with an attention mechanism** for automatic video caption generation using the **MSVD dataset**. The model takes pre-extracted video features as input and generates captions describing the video content.  
 
-The bash script "hw2_seq2seq.sh" is to be used for testing and generating the results text file i.e. "testset_output.txt".
+---
 
-The already trained model is in the "TrainedModels" directory.
+## 📂 Repository Structure  
 
-The bleu_eval.py file is used for finding the accuracy of the model and calculating the bleu score.
+- **`model_seq2seq.py`** – Main implementation containing:
+  - Encoder and decoder models  
+  - Data preprocessing functions  
+  - End-to-end training/testing logic  
 
-Video feature folders "feat" for both training and testing have not been uploaded to the respective testing_data and training_data folders as per the instructions. 
-They need to be added manually to carry out both training and testing.
+- **`hw2_seq2seq.sh`** – Bash script for testing and generating output captions (`testset_output.txt`).  
+
+- **`TrainedModels/`** – Directory containing pre-trained models.  
+
+- **`bleu_eval.py`** – Script for evaluating model accuracy using the BLEU metric.  
+
+- **`training_data/` & `testing_data/`** – Directories where video features must be placed manually (not included in this repository).  
+
+---
+
+## 🏋️ Training
+
+Open model_seq2seq.py.
+
+**Set: Train = True inside the main_execution() function.**
+
+Run the training script.
+
+By default, the model is trained for 20 epochs.
 
 
-**Training:**
-For training, set Train = True in the main_execution() function in the model_seq2seq.py file. 
-Models in this version is executed for 20 epochs
+## 🧪 Testing
 
+**Open model_seq2seq.py and set: Train = False**
 
-**Testing:**
+Run the bash testing script: **bash hw2_seq2seq.sh testing_data testset_output.txt**
 
-For testing, the bash script "hw2_seq2seq.sh" has to be run. 
-However, before that make sure that, Train = False is set in the main_execution() function in the model_seq2seq.py file.
-The "hw2_seq2seq.sh" script is run with "testing_data" and testset_output.txt.
+The generated captions will be stored in **testset_output.txt.**
 
-The trained model "model_batchsize_16_hiddensize_256_DP_0.3_worddim_2048.h5" has a bleu score of 0.6664588094412136. 
-This information is also recorded in the final_result.csv file during the testing process.
+Evaluation results will be saved in **final_result.csv.**
+
+## 📊 Results
+
+Trained model: **model_batchsize_16_hiddensize_256_DP_0.3_worddim_2048.h5**
+
+Achieved BLEU score: **0.6665**
+
+BLEU scores are computed by comparing generated captions against ground-truth captions.
+
+Results are logged in **final_result.csv.**
+
+Generated captions are available in **testset_output.txt.**
+
+## 🔖 Notes
+
+The video feature folders (feat/) are not included in this repository. They must be added manually to **training_data/ and testing_data/.**
+
+Ensure dataset preparation is completed before running training or testing.
